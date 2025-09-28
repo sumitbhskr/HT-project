@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Card Design</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+    .card{
+      background-color: white;
+      width: 220px;
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .image img{
+      width: 100%;
+      border-radius: 7px 7px 0 0;
+      display: block;
+    }
+    /* Capsules just below the image */
+    .capsules{
+      padding: 8px;
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+    }
+    .capsules span{
+      border: 1px solid black;
+      padding: 0px 6px;
+      border-radius: 7px;
+      font-size: 12px;
+    }
+    /* Sumit heading */
+    .title{
+      text-align: center;
+      font-size: 16px;
+      margin: 5px 0;
+      font-weight: bold;
+    }
+    .content{
+      padding: 10px 13px 15px 13px;
+    }
+    .content p{
+      font-size: 13px;
+      color: gray;
+      text-align: center;
+    }
+    /* Button */
+    .button{
+      text-align: center;  /* center align */
+      margin-bottom: 12px;
+    }
+    .button button{
+      padding: 5px 13px;
+      border-radius: 9px;
+      background-color: rgb(170, 206, 237);
+      color: blue;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="image">
+      <img src="https://img.freepik.com/premium-photo/man-boat-is-sitting-water-sunset_777078-5683.jpg" alt="">
+    </div>
+    <div class="capsules">
+      <span>Nature</span>
+      <span>Lake</span>
+    </div>
+    <div class="title">Sumit</div>
+    <div class="content">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, temporibus in.</p>
+    </div>
+    <div class="button">
+      <button>Read</button>
+    </div>
+  </div>
+</body>
+</html>
