@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Categories Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #444;
+    }
+    nav a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #666;
+    }
+    section {
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    iframe, audio {
+      width: 100%;
+      max-width: 400px;
+      height: 220px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    audio {
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎬 Media Categories Website 🎵</h1>
+  </header>
+
+  <nav>
+    <a href="#movies">Movies</a>
+    <a href="#education">Education</a>
+    <a href="#music">Music</a>
+    <a href="#podcasts">Podcasts</a>
+  </nav>
+
+  <!-- Movies Section -->
+  <section id="movies">
+    <h2>🎥 Movies</h2>
+    <div class="media-grid">
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>📚 Education</h2>
+    <div class="media-grid">
+      <iframe src="https://www.youtube.com/embed/H14bBuluwB8" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Z1Yd7upQsXY" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Music Section -->
+  <section id="music">
+    <h2>🎵 Music</h2>
+    <div class="media-grid">
+      <iframe src="https://www.youtube.com/embed/ktvTqknDobU" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Podcasts Section -->
+  <section id="podcasts">
+    <h2>🎤 Podcasts / Audio</h2>
+    <div class="media-grid">
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </section>
+
+</body>
+</html>
