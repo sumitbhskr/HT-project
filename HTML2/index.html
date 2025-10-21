@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stylish Card (uses Card.png)</title>
+  <style>
+    /* Page */
+    :root{
+      --card-width: 340px;
+      --radius: 16px;
+      --accent: linear-gradient(135deg,#6a11cb 0%, #2575fc 100%);
+      --muted: #6b7280;
+      --glass: rgba(255,255,255,0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 500px at 10% 10%, rgba(37,117,252,0.08),
+        transparent 10%),
+        linear-gradient(180deg,#0f172a 0%, #071033 100%);
+      margin:0;
+      padding:32px;
+      color:white;
+    }
+
+    /* Card wrapper */
+    .card {
+      width:var(--card-width);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+      will-change: transform;
+      position:relative;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .card:hover{
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 22px 50px rgba(2,6,23,0.75);
+    }
+
+    /* Top image */
+    .card .media{
+      width:100%;
+      height:180px;
+      background-image: url('Card.png');
+      background-size: cover;
+      background-position: center;
+      position:relative;
+    }
+    /* subtle gradient overlay on top image */
+    .card .media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.0) 30%, rgba(2,6,23,0.55) 100%);
+    }
+
+    /* Content area */
+    .card .content{
+      padding:16px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    /* Avatar */
+    .avatar{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      overflow:hidden;
+      flex:0 0 64px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+      border: 2px solid rgba(255,255,255,0.06);
+      background: linear-gradient(135deg,#fff3 0%, #fff1 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:600;
+      color:#0b1220;
+      backdrop-filter: blur(4px);
+    }
+
+    .info{
+      flex:1 1 auto;
+    }
+    .title{
+      font-size:16px;
+      font-weight:700;
+      margin:0 0 6px 0;
+      letter-spacing: -0.2px;
+    }
+    .subtitle{
+      margin:0 0 8px 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.25;
+    }
+
+    /* tags and meta */
+    .meta{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .chip{
+      font-size:12px;
+      padding:6px 8px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.04);
+      color:#dbeafe;
+    }
+
+    /* action area */
+    .actions{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+      align-items:center;
+    }
+    .btn{
+      appearance:none;
+      -webkit-appearance:none;
+      border:0;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      background:var(--glass);
+      color: #e6eefc;
+      border:1px solid rgba(255,255,255,0.04);
+      transition: transform .16s, box-shadow .16s, background .16s;
+    }
+    .btn:active{ transform: translateY(1px) }
+    .btn.primary{
+      background: var(--accent);
+      color:white;
+      box-shadow: 0 8px 24px rgba(37,117,252,0.18), inset 0 -2px 0 rgba(0,0,0,0.12);
+      border: none;
+    }
+    .btn.ghost{
+      background: transparent;
+      border: 1px dashed rgba(255,255,255,0.06);
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    /* footer row */
+    .card-footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 16px;
+      border-top:1px solid rgba(255,255,255,0.02);
+      font-size:13px;
+      color:var(--muted);
+      gap:10px;
+    }
+
+    /* responsive adjustments */
+    @media (max-width:380px){
+      :root{ --card-width: 92vw; }
+      .avatar{ width:56px;height:56px; border-radius:10px;}
+    }
+  </style>
+</head>
+<body>
+
+  <article class="card" aria-labelledby="card-title" aria-describedby="card-desc">
+    <div class="media" role="img" aria-label="Header image for the card (Card.png)"></div>
+
+    <div class="content">
+      <div class="avatar" aria-hidden="true">
+        <!-- You can replace with <img src="avatar.jpg"> if you have an avatar file -->
+        JD
+      </div>
+
+      <div class="info">
+        <h2 id="card-title" class="title">Designer's Choice — Modern Card</h2>
+        <p id="card-desc" class="subtitle">
+          A clean, responsive card layout using an image header (Card.png), a short description, tags, and action buttons.
+        </p>
+
+        <div class="meta" aria-hidden="false">
+          <span class="chip">UI / UX</span>
+          <span class="chip">Design</span>
+          <span class="chip">Featured</span>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" type="button">View Project</button>
+          <button class="btn ghost" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span>Updated • Sep 15, 2025</span>
+      <span>• 1.2k views</span>
+    </div>
+  </article>
+
+</body>
+</html>
+
